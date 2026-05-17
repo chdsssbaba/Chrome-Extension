@@ -1,0 +1,12 @@
+{
+  "name": "productivity-suite",
+  "version": "1.0.0",
+  "description": "A multi-feature Chrome extension productivity suite built with Manifest V3.",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "devDependencies": {},
+  "author": "CHITTURI DOLA SATYA SIVA SHANKAR BABA",
+  "license": "ISC"
+}
