@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productivity Suite — Settings</title>
+  <link rel="stylesheet" href="src/styles/common.css">
+  <link rel="stylesheet" href="src/styles/options.css">
+</head>
+<body>
+  <div class="options-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+
+  <div class="options-container">
+    <header class="options-header">
+      <div class="header-brand">
+        <div class="logo-mark">
+          <span class="logo-icon">⚡</span>
+        </div>
+        <div>
+          <h1>Settings</h1>
+          <p class="subtitle">Productivity Suite Configuration</p>
+        </div>
+      </div>
+    </header>
+
+    <main class="options-main">
+      <section class="glass-panel settings-section">
+        <div class="section-header">
+          <h2>🚫 Website Blocker</h2>
+          <p class="section-desc">Block distracting websites to stay focused.</p>
+        </div>
+
+        <div class="add-block-row">
+          <input type="text" id="block-hostname-input" data-testid="block-hostname-input" placeholder="e.g. facebook.com" />
+          <button class="btn btn-primary" id="add-block-btn" data-testid="add-block-btn">
+            ➕ Block
+          </button>
+        </div>
+
+        <div class="blocked-sites-list" id="blocked-sites-list" data-testid="blocked-sites-list"></div>
+      </section>
+
+      <section class="glass-panel settings-section">
+        <div class="section-header">
+          <h2>📦 Data Management</h2>
+          <p class="section-desc">Export all your data as a JSON backup file.</p>
+        </div>
+
+        <div class="export-row">
+          <div class="export-info">
+            <span class="export-label">Export includes:</span>
+            <div class="export-tags">
+              <span class="badge badge-accent">Sessions</span>
+              <span class="badge badge-accent">Notes</span>
+              <span class="badge badge-accent">Blocked Sites</span>
+            </div>
+          </div>
+          <button class="btn btn-primary" id="export-data-btn" data-testid="export-data-btn">
+            📥 Export Data
+          </button>
+        </div>
+      </section>
+
+      <section class="glass-panel settings-section">
+        <div class="section-header">
+          <h2>⌨️ Keyboard Shortcuts</h2>
+          <p class="section-desc">Quick actions to boost your workflow.</p>
+        </div>
+
+        <div class="shortcuts-grid">
+          <div class="shortcut-item">
+            <span class="shortcut-label">Open Popup</span>
+            <kbd>Ctrl+Shift+P</kbd>
+          </div>
+          <div class="shortcut-item">
+            <span class="shortcut-label">Quick Save Session</span>
+            <kbd>Ctrl+Shift+S</kbd>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="options-footer">
+      <p>Productivity Suite v1.0 — Built with ❤️</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="src/options.js"></script>
+</body>
+</html>
