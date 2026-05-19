@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Tab — Productivity Suite</title>
+  <link rel="stylesheet" href="src/styles/common.css">
+  <link rel="stylesheet" href="src/styles/newtab.css">
+</head>
+<body>
+  <div class="newtab-bg">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="grid-overlay"></div>
+  </div>
+
+  <div class="newtab-container">
+    <header class="newtab-header">
+      <div class="greeting-section">
+        <h1 class="greeting" id="greeting"></h1>
+        <p class="date-display" id="date-display"></p>
+      </div>
+      <div class="clock" id="clock"></div>
+    </header>
+
+    <div class="widgets-grid">
+      <section class="glass-panel widget widget-notes">
+        <div class="widget-header">
+          <h2>📝 Notes</h2>
+        </div>
+        <div class="widget-content" id="widget-notes" data-testid="widget-notes"></div>
+      </section>
+
+      <section class="glass-panel widget widget-sessions">
+        <div class="widget-header">
+          <h2>📑 Saved Sessions</h2>
+        </div>
+        <div class="widget-content" id="widget-sessions" data-testid="widget-sessions"></div>
+      </section>
+
+      <section class="glass-panel widget widget-blocked">
+        <div class="widget-header">
+          <h2>🛡️ Blocked Sites</h2>
+        </div>
+        <div class="widget-content" id="widget-blocked"></div>
+      </section>
+
+      <section class="glass-panel widget widget-shortcuts">
+        <div class="widget-header">
+          <h2>⌨️ Quick Actions</h2>
+        </div>
+        <div class="widget-content">
+          <div class="quick-actions-grid">
+            <button class="quick-action-btn" id="qa-open-popup">
+              <span class="qa-icon">⚡</span>
+              <span class="qa-label">Open Popup</span>
+              <kbd>Ctrl+Shift+P</kbd>
+            </button>
+            <button class="quick-action-btn" id="qa-save-session">
+              <span class="qa-icon">💾</span>
+              <span class="qa-label">Quick Save</span>
+              <kbd>Ctrl+Shift+S</kbd>
+            </button>
+            <button class="quick-action-btn" id="qa-options">
+              <span class="qa-icon">⚙️</span>
+              <span class="qa-label">Settings</span>
+            </button>
+            <button class="quick-action-btn" id="qa-export">
+              <span class="qa-icon">📥</span>
+              <span class="qa-label">Export Data</span>
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer class="newtab-footer">
+      <p>Productivity Suite v1.0</p>
+    </footer>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="src/newtab.js"></script>
+</body>
+</html>
