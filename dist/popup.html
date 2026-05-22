@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productivity Suite</title>
+  <link rel="stylesheet" href="src/styles/common.css">
+  <link rel="stylesheet" href="src/styles/popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <div class="header-left">
+        <div class="logo-mark">
+          <span class="logo-icon">⚡</span>
+        </div>
+        <div class="header-text">
+          <h1>Productivity Suite</h1>
+          <p class="subtitle">Your browser companion</p>
+        </div>
+      </div>
+      <button class="btn btn-icon btn-secondary" id="open-options-btn" data-testid="open-options-btn" title="Settings">
+        ⚙️
+      </button>
+    </header>
+
+    <nav class="popup-tabs">
+      <button class="tab-btn active" data-tab="sessions">
+        <span class="tab-icon">📑</span>
+        <span>Sessions</span>
+      </button>
+      <button class="tab-btn" data-tab="notes">
+        <span class="tab-icon">📝</span>
+        <span>Notes</span>
+      </button>
+    </nav>
+
+    <main class="popup-content">
+      <section class="tab-panel active" id="panel-sessions">
+        <div class="save-session-bar">
+          <input type="text" id="session-name-input" placeholder="Session name..." />
+          <button class="btn btn-primary" id="save-session-btn" data-testid="save-session-btn">
+            💾 Save
+          </button>
+        </div>
+        <div class="sessions-list" id="sessions-list" data-testid="sessions-list"></div>
+      </section>
+
+      <section class="tab-panel" id="panel-notes">
+        <textarea id="notes-textarea" data-testid="notes-textarea" placeholder="Write your notes here..."></textarea>
+        <div class="notes-actions">
+          <span class="char-count" id="char-count">0 chars</span>
+          <button class="btn btn-primary" id="save-notes-btn" data-testid="save-notes-btn">
+            💾 Save Notes
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script src="src/popup.js"></script>
+</body>
+</html>

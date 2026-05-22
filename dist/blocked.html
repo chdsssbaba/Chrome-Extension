@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Blocked — Productivity Suite</title>
+  <link rel="stylesheet" href="src/styles/common.css">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #050510 0%, #1a0a2e 40%, #0d0d24 100%);
+    }
+
+    .bg-orbs {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .bg-orbs .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.2;
+    }
+
+    .bg-orbs .orb-1 {
+      width: 400px;
+      height: 400px;
+      background: #ef4444;
+      top: -100px;
+      left: -100px;
+      animation: orbFloat 20s ease-in-out infinite;
+    }
+
+    .bg-orbs .orb-2 {
+      width: 300px;
+      height: 300px;
+      background: #f59e0b;
+      bottom: -50px;
+      right: -50px;
+      animation: orbFloat 20s ease-in-out infinite reverse;
+    }
+
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(30px, -30px) scale(1.05); }
+    }
+
+    .blocked-container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 48px;
+      max-width: 520px;
+    }
+
+    .shield-icon {
+      font-size: 80px;
+      margin-bottom: 24px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .blocked-container h1 {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ef4444, #f59e0b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .blocked-container p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .blocked-url {
+      display: inline-block;
+      padding: 8px 20px;
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      border-radius: 100px;
+      font-size: 13px;
+      color: #ef4444;
+      font-family: monospace;
+      margin-bottom: 32px;
+      word-break: break-all;
+    }
+
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+      color: white;
+      border: none;
+      border-radius: var(--radius-md);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px var(--accent-glow);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+  </div>
+
+  <div class="blocked-container">
+    <div class="shield-icon">🛡️</div>
+    <h1 data-testid="blocked-message">Page Blocked</h1>
+    <p>This website has been blocked by Productivity Suite to help you stay focused and productive.</p>
+    <div class="blocked-url" id="blocked-url"></div>
+    <br>
+    <button class="back-btn" onclick="history.back()">← Go Back</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const site = params.get("site") || "Unknown";
+    document.getElementById("blocked-url").textContent = site;
+  </script>
+</body>
+</html>
